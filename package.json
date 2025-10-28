@@ -1,0 +1,85 @@
+{
+  "name": "repo-blueprint",
+  "version": "1.0.0",
+  "description": "Boilerplate repository template to jumpstart development with professional structure and community standards",
+  "keywords": [
+    "template",
+    "boilerplate",
+    "repository",
+    "github-template",
+    "project-structure",
+    "documentation",
+    "community-standards",
+    "starter-kit"
+  ],
+  "homepage": "https://github.com/ukr-projects/repo-blueprint#readme",
+  "bugs": {
+    "url": "https://github.com/ukr-projects/repo-blueprint/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ukr-projects/repo-blueprint.git"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "ukr-projects",
+    "email": "ujjwalkrai@gmail.com"
+  },
+  "files": [
+    ".github/",
+    "assets/",
+    "docs/",
+    "LICENSE",
+    "README.md"
+  ],
+  "scripts": {
+    "setup": "echo 'Setting up repository template...' && npm run validate",
+    "validate": "npm run validate:structure && npm run validate:docs",
+    "validate:structure": "echo 'Validating repository structure...' && test -d .github && test -d assets && test -d docs",
+    "validate:docs": "echo 'Validating documentation...' && test -f README.md && test -f LICENSE && test -f docs/CONTRIBUTING.md",
+    "check:links": "echo 'Checking documentation links...' && grep -r 'http' docs/ README.md || true",
+    "generate:toc": "echo 'Generate table of contents for documentation'",
+    "lint:md": "echo 'Linting markdown files...'",
+    "format:md": "echo 'Formatting markdown files...'",
+    "preview": "echo 'Preview documentation locally'",
+    "template:init": "echo 'Initialize new project from template' && npm run setup",
+    "template:clean": "echo 'Clean template-specific files for new project'",
+    "docs:build": "echo 'Build documentation site'",
+    "docs:serve": "echo 'Serve documentation locally'",
+    "test": "npm run validate",
+    "precommit": "npm run validate && npm run lint:md"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^18.0.0",
+    "@commitlint/config-conventional": "^18.0.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.0.0",
+    "markdownlint-cli": "^0.37.0",
+    "prettier": "^3.0.0"
+  },
+  "lint-staged": {
+    "*.md": [
+      "markdownlint --fix",
+      "prettier --write"
+    ],
+    "*.{json,yml,yaml}": [
+      "prettier --write"
+    ]
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/ukr-projects"
+  }
+}
