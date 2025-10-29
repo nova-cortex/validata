@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "validata"
+version = "1.0.0"
+authors = [
+  { name="ukr", email="ujjwalkrai@gmail.com" },
+]
+description = "An AI-powered fake news detector for comprehensive news verification and multi-source analysis."
+readme = "README.md" # Changed to root README.md
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "fastapi==0.104.1",
+    "uvicorn[standard]==0.24.0",
+    "requests==2.31.0",
+    "beautifulsoup4==4.12.2",
+    "lxml==4.9.3",
+    "newspaper3k==0.2.8",
+    "python-dotenv==1.0.0",
+    "google-generativeai==0.3.1",
+    "pydantic==2.5.0",
+    "nltk==3.8.1",
+    "streamlit==1.28.1",
+    "plotly==5.18.0",
+    "pandas==2.1.3",
+]
+
+[project.optional-dependencies]
+dev = [
+    "black",
+    "flake8",
+    "pytest",
+    "requests-mock"
+]
+
+[project.urls]
+"Homepage" = "https://github.com/nova-cortex/validata"
+"Bug Tracker" = "https://github.com/nova-cortex/validata/issues"
