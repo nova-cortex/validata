@@ -1,0 +1,7 @@
+﻿backend/
+docs/
+assets/
+*.pyc
+__pycache__/
+.git/
+.env

@@ -1,0 +1,13 @@
+﻿[server]
+fileWatcherType = "none"
+headless = true
+
+[client]
+toolbarMode = "minimal"
+
+[runner]
+magicEnabled = true
+fastReruns = true
+
+[browser]
+gatherUsageStats = false
